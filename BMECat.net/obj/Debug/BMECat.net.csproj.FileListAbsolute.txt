@@ -1,0 +1,5 @@
+C:\Users\diana.colombo\Documents\GitHub\BMECat.net\BMECat.net\bin\Debug\BMECat.net.dll
+C:\Users\diana.colombo\Documents\GitHub\BMECat.net\BMECat.net\bin\Debug\BMECat.net.pdb
+C:\Users\diana.colombo\Documents\GitHub\BMECat.net\BMECat.net\obj\Debug\BMECat.net.csprojResolveAssemblyReference.cache
+C:\Users\diana.colombo\Documents\GitHub\BMECat.net\BMECat.net\obj\Debug\BMECat.net.dll
+C:\Users\diana.colombo\Documents\GitHub\BMECat.net\BMECat.net\obj\Debug\BMECat.net.pdb
