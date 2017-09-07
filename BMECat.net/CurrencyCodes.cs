@@ -23,6 +23,7 @@ namespace BMECat.net
     public enum CurrencyCodes
     {
         EUR = 978,
+        CHF = 555,
         Unknown = 0
     }
 

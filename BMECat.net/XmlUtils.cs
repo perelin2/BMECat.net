@@ -65,6 +65,7 @@ namespace BMECat.net
             try
             {
                 XmlNode _node = node.SelectSingleNode(xpath, nsmgr);
+
                 if (_node == null)
                 {
                     return defaultValue;
@@ -150,5 +151,43 @@ namespace BMECat.net
                 return defaultValue;
             }
         } // !nodeAsDateTime()
+
+
+        public static string attributeAsString(XmlNode node, string xpath, string attribute, XmlNamespaceManager nsmgr = null, string defaultValue = "")
+        {
+            if (node == null)
+            {
+                return defaultValue;
+            }
+
+            try
+            {
+                XmlNode _node = node.SelectSingleNode(xpath, nsmgr);
+
+                if (_node == null)
+                {
+                    return defaultValue;
+                }
+                else
+                {
+                    XmlNode _attribute = _node.Attributes.GetNamedItem(attribute);
+                    if (_attribute == null)
+                    {
+                        return defaultValue;
+                    }else { 
+                    return _attribute.Value;
+                    }
+                }
+            }
+            catch (XPathException)
+            {
+                return defaultValue;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            };
+        } // attributeAsString()
+
     }
 }

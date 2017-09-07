@@ -1,14 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<BMECAT version="2005" xmlns:xsi="http://www.bmecat.org/bmecat/2005fd">
+<!DOCTYPE BMECAT SYSTEM "bmecat_new_catalog_1_2.dtd">
+<BMECAT version="1.2">
   <HEADER>
     <CATALOG>
-      <LANGUAGE>deu</LANGUAGE>
-      <CATALOG_ID>QA_CAT_002</CATALOG_ID>
-      <CATALOG_VERSION>001.002</CATALOG_VERSION>
-      <CATALOG_NAME>Office Material</CATALOG_NAME>
-      <GENERATION_DATE>2004-08-20T10:59:54+02:00</GENERATION_DATE>
-      <CURRENCY>EUR</CURRENCY>
+      <LANGUAGE>eng</LANGUAGE>
+      <CATALOG_ID>BGB Products</CATALOG_ID>
+      <CATALOG_VERSION>2017-09-06</CATALOG_VERSION>
+      <CATALOG_NAME>Katalog_2017</CATALOG_NAME>
+      <GENERATION_DATE />
+      <CURRENCY>CHF</CURRENCY>
+      <PRICE_FLAG type="incl_freight">TRUE</PRICE_FLAG>
+      <PRICE_FLAG type="incl_packing">TRUE</PRICE_FLAG>
+      <PRICE_FLAG type="incl_assurance">TRUE</PRICE_FLAG>
+      <PRICE_FLAG type="incl_duty">TRUE</PRICE_FLAG>
     </CATALOG>
+    <BUYER>
+      <BUYER_ID type="buyer_specific">10369</BUYER_ID>
+      <ADDRESS type="buyer">
+        <NAME />
+      </ADDRESS>
+    </BUYER>
   </HEADER>
   <T_NEW_CATALOG>
     <PRODUCT mode="new">

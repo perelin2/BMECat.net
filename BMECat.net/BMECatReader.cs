@@ -36,15 +36,17 @@ namespace BMECat.net
             }
 
             XmlDocument doc = new XmlDocument();
+            stream.Seek(0, SeekOrigin.Begin);
             doc.Load(stream);
+           
             XmlNamespaceManager nsmgr = new XmlNamespaceManager(doc.DocumentElement.OwnerDocument.NameTable);
             nsmgr.AddNamespace("xsi", "http://www.bmecat.org/bmecat/1.2/bmecat_new_catalog");
 
-            string version = XmlUtils.nodeAsString(doc.DocumentElement, "/BMECAT/@version");
-            if (version != "2005")
-            {
-                throw new Exception("Only version 2005 is currently supported");
-            }
+            //string version = XmlUtils.nodeAsString(doc.DocumentElement, "/BMECAT/@version");
+            //if (version != "2005")
+            //{
+            //    throw new Exception("Only version 2005 is currently supported");
+            //}
 
             ProductCatalog retval = new ProductCatalog();
 
@@ -59,6 +61,34 @@ namespace BMECat.net
             retval.CatalogName = XmlUtils.nodeAsString(doc.DocumentElement, "/BMECAT/HEADER/CATALOG/CATALOG_NAME");
             retval.GenerationDate = XmlUtils.nodeAsDateTime(doc.DocumentElement, "/BMECAT/HEADER/CATALOG/GENERATION_DATE");
             retval.Currency = default(CurrencyCodes).FromString(XmlUtils.nodeAsString(doc.DocumentElement, "/BMECAT/HEADER/CATALOG/CURRENCY"));
+            foreach (XmlNode priceFlagNode in doc.DocumentElement.SelectNodes("/BMECAT/HEADER/CATALOG/PRICE_FLAG"))
+            {
+                retval.PriceFlags.Add(new PriceFlag() {
+                    PriceFlagActive = priceFlagNode.InnerText,
+                    PriceFlagType= priceFlagNode.Attributes.GetNamedItem("type").Value
+                });
+            }
+// end catalog
+
+
+// start Buyer
+            retval.Buyer.Id = XmlUtils.nodeAsString(doc.DocumentElement, "/BMECAT/HEADER/BUYER/BUYER_ID");
+//            retval.Buyer.IdType = doc.DocumentElement.SelectNodes("/BMECAT/HEADER/BUYER/BUYER_ID").Item(1).Attributes.GetNamedItem("type").Value;
+            retval.Buyer.IdType = XmlUtils.attributeAsString(doc.DocumentElement, "/BMECAT/HEADER/BUYER/BUYER_ID", "type");
+            retval.Buyer.AddressContact = XmlUtils.nodeAsString(doc.DocumentElement, "/BMECAT/HEADER/BUYER/BUYER_ADDRESS_CONTACT");
+            retval.Buyer.AddressStreet = XmlUtils.nodeAsString(doc.DocumentElement, "/BMECAT/HEADER/BUYER/BUYER_ADDRESS_STREET");
+            retval.Buyer.AddressZIP = XmlUtils.nodeAsString(doc.DocumentElement, "/BMECAT/HEADER/BUYER/BUYER_ADDRESS_ZIP");
+            retval.Buyer.AddressCity = XmlUtils.nodeAsString(doc.DocumentElement, "/BMECAT/HEADER/BUYER/BUYER_ADDRESS_CITY");
+            retval.Buyer.AddressCountry = XmlUtils.nodeAsString(doc.DocumentElement, "/BMECAT/HEADER/BUYER/BUYER_ADDRESS_COUNTRY");
+
+// end Buyer
+
+// start Supplier
+
+            retval.Supplier.Id = XmlUtils.nodeAsString(doc.DocumentElement, "/BMECAT/HEADER/SUPPLIER/SUPPLIER_ID");
+            retval.Supplier.IdType = XmlUtils.attributeAsString(doc.DocumentElement, "/BMECAT/HEADER/SUPPLIER/SUPPLIER_ID", "type");
+
+            // end Supplier
 
             XmlNodeList productNodes = doc.DocumentElement.SelectNodes("/BMECAT/T_NEW_CATALOG/PRODUCT");
             Parallel.ForEach(productNodes.Cast<XmlNode>(),

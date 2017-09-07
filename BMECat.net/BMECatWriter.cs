@@ -45,11 +45,12 @@ namespace BMECat.net
             this.Writer = new XmlTextWriter(stream, Encoding.UTF8);
             Writer.Formatting = Formatting.Indented;
             Writer.WriteStartDocument();
+            Writer.WriteDocType("BMECAT",null, "bmecat_new_catalog_1_2.dtd",null);
 
             #region XML-Kopfbereich
             Writer.WriteStartElement("BMECAT");
-            Writer.WriteAttributeString("version", "2005");
-            Writer.WriteAttributeString("xmlns", "xsi", null, "http://www.bmecat.org/bmecat/2005fd");
+            Writer.WriteAttributeString("version", "1.2");
+//            Writer.WriteAttributeString("xmlns", "xsi", null, "http://www.bmecat.org/bmecat/2005fd");
             #endregion // !XML-Kopfbereich
 
             #region Header
@@ -66,6 +67,13 @@ namespace BMECat.net
             _writeOptionalElementString(Writer, "CATALOG_NAME", this.Catalog.CatalogName);
             _writeDateTime(elementName: "GENERATION_DATE", date: this.Catalog.GenerationDate);
             Writer.WriteElementString("CURRENCY", this.Catalog.Currency.EnumToString());
+            foreach(PriceFlag priceflag in this.Catalog.PriceFlags)
+            {
+                Writer.WriteStartElement("PRICE_FLAG");
+                Writer.WriteAttributeString("type", priceflag.PriceFlagType);
+                Writer.WriteString(priceflag.PriceFlagActive);
+                Writer.WriteEndElement(); // PRICE_FLAG
+            }
             _writeTransport(Writer, this.Catalog.Transport);
             Writer.WriteEndElement(); // !CATALOG
 

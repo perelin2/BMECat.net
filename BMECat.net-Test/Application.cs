@@ -24,15 +24,18 @@ namespace BMECat.net_Test
     {
         internal void run()
         {
-            ProductCatalog catalog = new ProductCatalog()
-            {
-                Languages = { LanguageCodes.DEU },
-                CatalogId = "QA_CAT_002",
-                CatalogVersion = "001.002",
-                CatalogName = "Office Material",
-                GenerationDate = new System.DateTime(2004, 8, 20, 10, 59, 54),
-                Currency = CurrencyCodes.EUR
-            };
+            //ProductCatalog catalog = new ProductCatalog()
+            //{
+            //    //Languages = { LanguageCodes.DEU },
+            //    //CatalogId = "QA_CAT_002",
+            //    //CatalogVersion = "001.002",
+            //    //CatalogName = "Office Material",
+            //    //GenerationDate = new System.DateTime(2004, 8, 20, 10, 59, 54),
+            //    //Currency = CurrencyCodes.EUR
+                
+            //};
+
+            ProductCatalog catalog = ProductCatalog.Load(@"P:\BMEcat\catalog_header.xml");
 
             catalog.Products.Add(new Product()
             {
@@ -46,7 +49,7 @@ namespace BMECat.net_Test
                 VAT = 19
             });
 
-
+            
             catalog.Save("test.xml");
         }
     }

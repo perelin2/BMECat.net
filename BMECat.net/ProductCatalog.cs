@@ -63,11 +63,15 @@ namespace BMECat.net
         public TransportConditions Transport { get; set; }
         public List<Product> Products { get; set; }
         public CurrencyCodes Currency { get; set; }
-
+        public List<PriceFlag> PriceFlags { get; set; }
+       
         public ProductCatalog()
         {
             this.Languages = new List<LanguageCodes>();
             this.Products = new List<Product>();
+            this.PriceFlags = new List<PriceFlag>();
+            this.Buyer = new Party();
+            this.Supplier = new Party();
         } // !ProductCatalog()
 
 
@@ -90,7 +94,6 @@ namespace BMECat.net
             BMECatWriter writer = new BMECatWriter();
             writer.Save(this, filename);
         } // !Save()
-
 
         public static ProductCatalog Load(Stream stream)
         {

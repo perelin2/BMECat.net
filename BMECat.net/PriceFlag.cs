@@ -18,16 +18,20 @@
  */
 namespace BMECat.net
 {
-    public class Party
+    public class PriceFlag
     {
-        public string Id { get; set; }
-        public string IdType { get; set; }
-        public string Name { get; set; }
-        public string ContactName { get; set; }
-        public string AddressContact { get; set; }
-        public string AddressStreet { get; set; }
-        public string AddressZIP { get; set; }
-        public string AddressCity { get; set; }
-        public string AddressCountry { get; set; }
+        /// <summary>
+        /// can be true or false
+        /// </summary>
+        public string PriceFlagActive{ get; set; }
+
+        /// <summary>
+        /// Price flag types:
+        /// incl_freight  -> Frachtkosten
+        /// incl_packing  -> Verpackung
+        /// incl_assurance  ->Versicherung
+        /// incl_duty     -> Zoll
+        /// </summary>
+        public string PriceFlagType { get; set; }
     }
 }
