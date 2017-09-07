@@ -1,0 +1,8 @@
+C:\Users\diana.colombo\Documents\GitHub\BMECat.net\BMECat.net-Test\bin\Debug\BMECat.net-Test.exe.config
+C:\Users\diana.colombo\Documents\GitHub\BMECat.net\BMECat.net-Test\bin\Debug\BMECat.net-Test.exe
+C:\Users\diana.colombo\Documents\GitHub\BMECat.net\BMECat.net-Test\bin\Debug\BMECat.net-Test.pdb
+C:\Users\diana.colombo\Documents\GitHub\BMECat.net\BMECat.net-Test\bin\Debug\BMECat.net.dll
+C:\Users\diana.colombo\Documents\GitHub\BMECat.net\BMECat.net-Test\bin\Debug\BMECat.net.pdb
+C:\Users\diana.colombo\Documents\GitHub\BMECat.net\BMECat.net-Test\obj\Debug\BMECat.net-Test.csprojResolveAssemblyReference.cache
+C:\Users\diana.colombo\Documents\GitHub\BMECat.net\BMECat.net-Test\obj\Debug\BMECat.net-Test.exe
+C:\Users\diana.colombo\Documents\GitHub\BMECat.net\BMECat.net-Test\obj\Debug\BMECat.net-Test.pdb

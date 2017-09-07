@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BMECAT version="2005" xmlns:xsi="http://www.bmecat.org/bmecat/2005fd">
+  <HEADER>
+    <CATALOG>
+      <LANGUAGE>deu</LANGUAGE>
+      <CATALOG_ID>QA_CAT_002</CATALOG_ID>
+      <CATALOG_VERSION>001.002</CATALOG_VERSION>
+      <CATALOG_NAME>Office Material</CATALOG_NAME>
+      <GENERATION_DATE>2004-08-20T10:59:54+02:00</GENERATION_DATE>
+      <CURRENCY>EUR</CURRENCY>
+    </CATALOG>
+  </HEADER>
+  <T_NEW_CATALOG>
+    <PRODUCT mode="new">
+      <SUPPLIER_PID>Q20-P09</SUPPLIER_PID>
+      <PRODUCT_DETAILS>
+        <DESCRIPTION_SHORT>Post-Safe Polythene Envelopes Deutsch</DESCRIPTION_SHORT>
+        <DESCRIPTION_LONG>Deutsch All-weather lightweight envelopes protect your contents and save you money. ALL - WEATHER.Once sealed, Post-Safe envelopes are completely waterproof.Your contents won't get damaged.</DESCRIPTION_LONG>
+        <EAN>0000000011</EAN>
+        <STOCK>100</STOCK>
+      </PRODUCT_DETAILS>
+      <PRODUCT_ORDER_DETAILS />
+      <PRODUCT_PRICE_DETAILS>
+        <PRODUCT_PRICE price_type="net_list">
+          <PRICE_AMOUNT>16.49</PRICE_AMOUNT>
+          <PRICE_CURRENCY>EUR</PRICE_CURRENCY>
+          <TAX>0.19</TAX>
+        </PRODUCT_PRICE>
+      </PRODUCT_PRICE_DETAILS>
+    </PRODUCT>
+  </T_NEW_CATALOG>
+</BMECAT>
