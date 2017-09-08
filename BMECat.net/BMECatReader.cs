@@ -75,6 +75,7 @@ namespace BMECat.net
             retval.Buyer.Id = XmlUtils.nodeAsString(doc.DocumentElement, "/BMECAT/HEADER/BUYER/BUYER_ID");
 //            retval.Buyer.IdType = doc.DocumentElement.SelectNodes("/BMECAT/HEADER/BUYER/BUYER_ID").Item(1).Attributes.GetNamedItem("type").Value;
             retval.Buyer.IdType = XmlUtils.attributeAsString(doc.DocumentElement, "/BMECAT/HEADER/BUYER/BUYER_ID", "type");
+            retval.Buyer.Name = XmlUtils.nodeAsString(doc.DocumentElement, "/BMECAT/HEADER/BUYER/BUYER_NAME");
             retval.Buyer.AddressContact = XmlUtils.nodeAsString(doc.DocumentElement, "/BMECAT/HEADER/BUYER/BUYER_ADDRESS_CONTACT");
             retval.Buyer.AddressStreet = XmlUtils.nodeAsString(doc.DocumentElement, "/BMECAT/HEADER/BUYER/BUYER_ADDRESS_STREET");
             retval.Buyer.AddressZIP = XmlUtils.nodeAsString(doc.DocumentElement, "/BMECAT/HEADER/BUYER/BUYER_ADDRESS_ZIP");
@@ -87,7 +88,15 @@ namespace BMECat.net
 
             retval.Supplier.Id = XmlUtils.nodeAsString(doc.DocumentElement, "/BMECAT/HEADER/SUPPLIER/SUPPLIER_ID");
             retval.Supplier.IdType = XmlUtils.attributeAsString(doc.DocumentElement, "/BMECAT/HEADER/SUPPLIER/SUPPLIER_ID", "type");
-
+            retval.Supplier.Name = XmlUtils.nodeAsString(doc.DocumentElement, "/BMECAT/HEADER/SUPPLIER/SUPPLIER_NAME");
+            retval.Supplier.AddressStreet = XmlUtils.nodeAsString(doc.DocumentElement, "/BMECAT/HEADER/SUPPLIER/ADDRESS/STREET");
+            retval.Supplier.AddressZIP = XmlUtils.nodeAsString(doc.DocumentElement, "/BMECAT/HEADER/SUPPLIER/ADDRESS/ZIP");
+            retval.Supplier.AddressCity = XmlUtils.nodeAsString(doc.DocumentElement, "/BMECAT/HEADER/SUPPLIER/ADDRESS/CITY");
+            retval.Supplier.AddressCountry = XmlUtils.nodeAsString(doc.DocumentElement, "/BMECAT/HEADER/SUPPLIER/ADDRESS/COUNTRY");
+            retval.Supplier.Phone = XmlUtils.nodeAsString(doc.DocumentElement, "/BMECAT/HEADER/SUPPLIER/ADDRESS/PHONE");
+            retval.Supplier.Fax = XmlUtils.nodeAsString(doc.DocumentElement, "/BMECAT/HEADER/SUPPLIER/ADDRESS/FAX");
+            retval.Supplier.EMail = XmlUtils.nodeAsString(doc.DocumentElement, "/BMECAT/HEADER/SUPPLIER/ADDRESS/EMAIL");
+            retval.Supplier.Url = XmlUtils.nodeAsString(doc.DocumentElement, "/BMECAT/HEADER/SUPPLIER/ADDRESS/URL");
             // end Supplier
 
             XmlNodeList productNodes = doc.DocumentElement.SelectNodes("/BMECAT/T_NEW_CATALOG/PRODUCT");

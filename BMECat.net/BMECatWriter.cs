@@ -83,22 +83,48 @@ namespace BMECat.net
                 if (!String.IsNullOrEmpty(this.Catalog.Buyer.Id))
                 {
                     Writer.WriteStartElement("BUYER_ID");
-                    Writer.WriteAttributeString("type", "buyer_specific");
+//                    Writer.WriteAttributeString("type", "buyer_specific");
+                    Writer.WriteAttributeString("type", this.Catalog.Buyer.IdType);
                     Writer.WriteString(this.Catalog.Buyer.Id);
                     Writer.WriteEndElement(); // !BUYER_ID
                 }
-                _writeOptionalElementString(Writer, "BUYER_NAME", this.Catalog.Buyer.Name);
-
-                Writer.WriteStartElement("ADDRESS");
-                Writer.WriteAttributeString("type", "buyer");
-                Writer.WriteElementString("NAME", this.Catalog.Buyer.Name);
-                if (!String.IsNullOrEmpty(this.Catalog.Buyer.ContactName))
-                {
-                    Writer.WriteElementString("CONTACT", this.Catalog.Buyer.ContactName);
-                }
-                Writer.WriteEndElement(); // !ADDRESS
+                Writer.WriteElementString("BUYER_NAME", this.Catalog.Buyer.Name);
+                Writer.WriteElementString("BUYER_ADDRESS_CONTACT", this.Catalog.Buyer.AddressContact);
+                Writer.WriteElementString("BUYER_ADDRESS_STREET", this.Catalog.Buyer.AddressStreet);
+                Writer.WriteElementString("BUYER_ADDRESS_ZIP", this.Catalog.Buyer.AddressZIP);
+                Writer.WriteElementString("BUYER_ADDRESS_CITY", this.Catalog.Buyer.AddressCity);
+                Writer.WriteElementString("BUYER_ADDRESS_COUNTRY", this.Catalog.Buyer.AddressCountry);
 
                 Writer.WriteEndElement(); // !BUYER
+            }
+
+            if (this.Catalog.Supplier != null)
+            {
+                Writer.WriteStartElement("SUPPLIER");
+                if (!String.IsNullOrEmpty(this.Catalog.Buyer.Id))
+                {
+                    Writer.WriteStartElement("SUPPLIER_ID");
+                    //                    Writer.WriteAttributeString("type", "buyer_specific");
+                    Writer.WriteAttributeString("type", this.Catalog.Supplier.IdType);
+                    Writer.WriteString(this.Catalog.Supplier.Id);
+                    Writer.WriteEndElement(); // !SUPPLIER_ID
+                }
+                Writer.WriteElementString("SUPPLIER_NAME", this.Catalog.Supplier.Name);
+
+                Writer.WriteStartElement("ADDRESS");
+                Writer.WriteAttributeString("type", this.Catalog.Supplier.IdType);
+                Writer.WriteElementString("STREET", this.Catalog.Supplier.AddressStreet);
+                Writer.WriteElementString("ZIP", this.Catalog.Supplier.AddressZIP);
+                Writer.WriteElementString("CITY", this.Catalog.Supplier.AddressCity);
+                Writer.WriteElementString("COUNTRY", this.Catalog.Buyer.AddressCountry);
+                Writer.WriteElementString("PHONE", this.Catalog.Supplier.Phone);
+                Writer.WriteElementString("FAX", this.Catalog.Supplier.Fax);
+                Writer.WriteElementString("EMAIL", this.Catalog.Supplier.EMail);
+                Writer.WriteElementString("URL", this.Catalog.Supplier.Url);
+
+                Writer.WriteEndElement(); // !ADDRESS
+
+                Writer.WriteEndElement(); // !SUPPLIER
             }
 
             Writer.WriteEndElement(); // !HEADER

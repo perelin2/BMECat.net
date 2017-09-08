@@ -29,5 +29,9 @@ namespace BMECat.net
         public string AddressZIP { get; set; }
         public string AddressCity { get; set; }
         public string AddressCountry { get; set; }
+        public string Phone { get; set; }
+        public string Fax { get; set; }
+        public string EMail { get; set; }
+        public string Url { get; set; }
     }
 }

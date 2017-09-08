@@ -15,11 +15,29 @@
       <PRICE_FLAG type="incl_duty">TRUE</PRICE_FLAG>
     </CATALOG>
     <BUYER>
-      <BUYER_ID type="buyer_specific">10369</BUYER_ID>
-      <ADDRESS type="buyer">
-        <NAME />
-      </ADDRESS>
+      <BUYER_ID type="supplier_specific">10369</BUYER_ID>
+      <BUYER_NAME>Universitaet Zurich</BUYER_NAME>
+      <BUYER_ADDRESS_CONTACT>Zentraler Rechnungseingang, P4U</BUYER_ADDRESS_CONTACT>
+      <BUYER_ADDRESS_STREET>Hirschengraben 60
+</BUYER_ADDRESS_STREET>
+      <BUYER_ADDRESS_ZIP>8001</BUYER_ADDRESS_ZIP>
+      <BUYER_ADDRESS_CITY>Zurich</BUYER_ADDRESS_CITY>
+      <BUYER_ADDRESS_COUNTRY>Schweiz</BUYER_ADDRESS_COUNTRY>
     </BUYER>
+    <SUPPLIER>
+      <SUPPLIER_ID type="duns">CHE106.038.013</SUPPLIER_ID>
+      <SUPPLIER_NAME>BGB Analytik AG</SUPPLIER_NAME>
+      <ADDRESS type="duns">
+        <STREET>Rohrmattstrasse 4</STREET>
+        <ZIP>4461</ZIP>
+        <CITY>Böckten</CITY>
+        <COUNTRY>Schweiz</COUNTRY>
+        <PHONE>0041619910046</PHONE>
+        <FAX>0041619910025</FAX>
+        <EMAIL>sales@bgb-analytik.com</EMAIL>
+        <URL>http://www.bgb-shop.com</URL>
+      </ADDRESS>
+    </SUPPLIER>
   </HEADER>
   <T_NEW_CATALOG>
     <PRODUCT mode="new">
